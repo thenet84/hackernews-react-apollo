@@ -14,8 +14,7 @@ const FEED_QUERY = gql`
       }
     }
   }
-`
-
+`;
 
 export default function LinkList(prosp){
   
@@ -28,7 +27,7 @@ export default function LinkList(prosp){
         const linksToRender = data.feed.links;
         return (
           <div>
-            {linksToRender.map(link => <Link key={link.id} link={link} />)}
+            {linksToRender.map(link => <Link key={link.id} {...link} />)}
           </div>
         )
       }
