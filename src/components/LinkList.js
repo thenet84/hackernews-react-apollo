@@ -8,9 +8,17 @@ const FEED_QUERY = gql`
     feed {
       links {
         id
-        createdAt
         url
         description
+        createdAt
+        postedBy{
+          name
+        }
+        votes{
+          user{
+            name
+          }
+        }
       }
     }
   }
@@ -27,7 +35,7 @@ export default function LinkList(prosp){
         const linksToRender = data.feed.links;
         return (
           <div>
-            {linksToRender.map(link => <Link key={link.id} {...link} />)}
+            {linksToRender.map((link, index) => <Link key={link.id} {...link} index={index} />)}
           </div>
         )
       }
