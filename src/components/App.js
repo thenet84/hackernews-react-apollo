@@ -4,6 +4,7 @@ import '../styles/App.css';
 import Header from './Header';
 import LinkList from './LinkList';
 import CreateLink from './CreateLink';
+import Search from './Search';
 import Login from './Login';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LinkList}/>
             <Route exact path="/create" component={CreateLink}/>
+            <Route exact path="/search" component={Search}/>
             <Route exact path="/login" component={Login}/>
           </Switch>
         </div>
